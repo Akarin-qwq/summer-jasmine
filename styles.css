@@ -26,6 +26,7 @@ body {
     position: fixed;
     top: 15px;
     height: 60px;
+    width: 100%;
     display: flex;
     align-items: center;
     transition: 
@@ -41,13 +42,13 @@ body {
 }
 
 .logo {
-    display:flex;
+    display: flex;
     position: fixed;
     height: 70px;
-    left: 40px;
-    background-color: rgb(255, 255, 255, 0.9);
+    margin-left: 40px;
+    background-color: rgb(255, 255, 255);
     border-radius: 50px;
-    padding: 15px;
+    padding: 12px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
 }
 
@@ -58,7 +59,10 @@ body {
 
 @media (max-width:768px) {
     .logo {
-        left: 50%;
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
     }
 }
 
