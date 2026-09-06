@@ -59,8 +59,7 @@ body {
 @media (max-width:768px) {
     .logo {
         position:relative;
-        left: 50%;
-
+        justify-content: center;
     }
 }
 
