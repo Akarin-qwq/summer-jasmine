@@ -56,6 +56,14 @@ body {
     filter: drop-shadow(1px 1px 5px rgb(0, 0, 0, 0.15));
 }
 
+@media (max-width:768px) {
+    .logo {
+        position:relative;
+        left: 50%;
+
+    }
+}
+
 .i18n {
     display: flex;
     position: fixed;
