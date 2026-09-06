@@ -58,10 +58,7 @@ body {
 
 @media (max-width:768px) {
     .logo {
-        display: flex;
-        position:relative;
-        justify-content: center;
-        left: auto;
+        left: 50%;
     }
 }
 
