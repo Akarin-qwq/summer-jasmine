@@ -274,7 +274,7 @@ body {
     transform 0.3s ease;
 }
 
-.social-item img{
+.social-item svg{
     width: 32px;
     height: 32px;
 }
