@@ -1,3 +1,4 @@
+/* 设定字体 */
 @font-face {
     font-family:"LXGWWenKai";
     src:url("fonts/LXGWWenKai-Regular.ttf")format("truetype");
@@ -22,6 +23,13 @@ body {
     font-family: "LXGWWenKai", sans-serif;
 }
 
+body svg {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* 导航栏 */
 #navbar {
     position: fixed;
     top: 15px;
@@ -35,21 +43,25 @@ body {
     z-index: 100;
 }
 
+/* 隐藏后样式 */
 #navbar.hidden {
     transform: translateY(-150%);
     opacity: 0;
     pointer-events: none;
 }
 
+/* Logo样式 */
 .logo {
     display: flex;
     position: fixed;
     height: 70px;
     margin-left: 40px;
-    background-color: rgb(255, 255, 255);
+    border: 1px solid #ddd;
+    background-color: rgb(255, 255, 255, 0.9);
     border-radius: 50px;
-    padding: 12px;
+    padding: 12px 30px;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .logo img {
@@ -63,21 +75,82 @@ body {
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
+        padding: 12px 25px;
     }
 }
 
-.i18n {
-    display: flex;
+.language {
     position: fixed;
-    width: 60px;
-    height: 60px;
-    right:40px;
+    right: 40px;
+}
+
+/* 顶部按钮 */
+.language-button {
+    display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(255, 255, 255, 0.8);
-    border-radius: 50%;
-    cursor: pointer;
+    height: 70px;
+    width: 70px;
+    gap: 6px;
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+}
+
+/* 下拉菜单 */
+.language-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 140px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+}
+
+/* 打开状态 */
+.language-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 菜单里的语言 */
+.language-menu button {
+    width: 100%;
+
+    padding: 9px 12px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+
+    text-align: left;
+
+    cursor: pointer;
+}
+
+.language-menu button:hover {
+    background: #f2f2f2;
+}
+
+@media (max-width: 768px) {
+    .language {
+        right: 15px;
+    }
 }
 
 .hero {
@@ -96,6 +169,7 @@ body {
 .hero-content {
     width: 500px;
     text-align: center;
+    align-items: center;
     position: absolute;
     top: calc(65vh - 200px);
     margin-left: 5%;
@@ -333,6 +407,7 @@ body {
 @media (max-width:768px) {
     .social-links {
         justify-content: space-between;
+        margin: 10px;
     }
     
     .social-item {
