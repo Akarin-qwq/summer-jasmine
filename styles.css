@@ -147,6 +147,12 @@ body svg {
     background: #f2f2f2;
 }
 
+.language-menu button.active {
+    background: #e6effc;
+    color: #2c66c5;
+    font-weight: 600;
+}
+
 @media (max-width: 768px) {
     .language {
         right: 15px;

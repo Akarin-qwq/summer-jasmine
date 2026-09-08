@@ -38,7 +38,16 @@ async function setLanguage(lang) {
 
 const languageButton = document.getElementById("languageButton");
 const languageMenu = document.getElementById("languageMenu");
-const currentLanguage = document.getElementById("currentLanguage");
+const languageButtons = document.querySelectorAll("#languageMenu button");
+
+// 高亮当前选中的语言
+function updateLanguageHighlight(lang) {
+    languageButtons.forEach(button => {
+        button.classList.toggle("active", button.dataset.lang === lang);
+    });
+}
+
+updateLanguageHighlight(savedLanguage);
 
 
 // 点击语言按钮
@@ -51,9 +60,9 @@ languageButton.addEventListener("click", () => {
 window.changeLanguage = function(lang, name) {
     setLanguage(lang);
 
-    document.getElementById("currentLanguage").textContent = name;
+    updateLanguageHighlight(lang);
 
-    document.getElementById("languageMenu").classList.remove("active");
+    languageMenu.classList.remove("active");
 };
 
 
