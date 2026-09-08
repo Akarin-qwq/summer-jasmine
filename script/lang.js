@@ -21,6 +21,18 @@ async function setLanguage(lang) {
         }
     });
 
+    document.querySelectorAll("[data-i18n-src]").forEach(element => {
+        const key = element.dataset.i18nSrc;
+
+        const value = key
+            .split(".")
+            .reduce((obj, key) => obj?.[key], translations);
+
+        if (value !== undefined) {
+            element.src = value;
+        }
+    });
+
     localStorage.setItem("language", lang);
 }
 

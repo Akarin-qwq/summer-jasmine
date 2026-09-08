@@ -40,5 +40,14 @@
 
       "As layer upon layer of fog lifts, there is no turning back on the road to the truth."
     ]
-  }
+  },
+
+  "gallery": {
+        "1": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/c2e6c5a8ca602c596665aded682e296e449909d0/ss_c2e6c5a8ca602c596665aded682e296e449909d0.1920x1080.jpg?t=1788184471",
+        "2": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/e479689efec23783a987e206d75b7fdfbc942d5d/ss_e479689efec23783a987e206d75b7fdfbc942d5d.1920x1080.jpg?t=1788184471",
+        "3": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/2134eae834be7e925d2f6cd1be68e592d1bcb002/ss_2134eae834be7e925d2f6cd1be68e592d1bcb002.1920x1080.jpg?t=1788184471",
+        "4": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/7570c707312dbf78d88b11b6bf4c37dfa10b2ac1/ss_7570c707312dbf78d88b11b6bf4c37dfa10b2ac1.1920x1080.jpg?t=1788184471",
+        "5": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/64cc03a3cac8dbec678e360c416813e06794e3d6/ss_64cc03a3cac8dbec678e360c416813e06794e3d6.1920x1080.jpg?t=1788184471",
+        "6": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/80e51da39159056854596a358bab55eed72ce8c8/ss_80e51da39159056854596a358bab55eed72ce8c8.1920x1080.jpg?t=1788184471" 
+    }
 }
