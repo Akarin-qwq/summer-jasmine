@@ -1,0 +1,10 @@
+.about {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    background: rgb(255, 255, 255);
+    color:#242020;
+    border-radius: 16px;
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgb(0, 0, 0, 0.15);
+}
