@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>小城茉莉-小剧场</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="小城茉莉,官方网站,视觉小说,百合,朱雨桐,邱小艺">
+    <meta name="description" content="视觉小说『小城茉莉』是一部百合向的角色扮演游戏。玩家将以朱雨桐的视角游玩，体验一段纠结、懵懂的夏日时光，通过点击选择导向最终不同的结局。这是一个关于“许愿”的故事，我们都曾幻想过有朝一日可以回到过去改变自己。好像抚平过去的伤疤未来的噩梦便不会发生。这也是一个关于“遗忘”的故事，将要离开家乡的孩子、一张去往远方的车票、一座逐渐变得陌生的城市。当旧的景色褪去，记忆成了泛黄的老照片。夏天、小城、茉莉。离开与留下，被隐瞒的真相。每一天枯燥重复的日常下主人公们又将如何面对自己的命运。做个梦吧，一起回到那个和熙的夏日午后，在教室的课桌上打哈欠，林荫道的树荫下嬉笑打闹，品尝美味的慕斯蛋糕，小心翼翼的尝试未知的菜品。故事会走向何方？最终的结局由您的选择而定。">
+    <meta neme="author" content="Akrin724">
+    <meta property="og:title" content="小城茉莉-小剧场"/>
+    <meta property="og:image" content="https://www.summer-jasmine.com/image/小城茉莉3.png"/>
+    <meta property="og:description" content="小城茉莉官方网站。视觉小说『小城茉莉』是一部百合向的角色扮演游戏。玩家将以朱雨桐的视角游玩，体验一段纠结、懵懂的夏日时光，通过点击选择导向最终不同的结局。">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="image/icon.ico" type="image/png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script/botton.js" type="module"></script>
+    <script src="script/bgm.js" type="module"></script>
+    <script src="script/navbar.js" defer></script>
+    <script src="script/lang.js" type="module"></script>
+</head>
+
+<body>
+    <audio id="bgm" autoplay loop>
+        <source src="audio/jasmine.mp3" type="audio/mpeg">
+    </audio>
+
+    <header id="navbar">
+        <div class="logo">
+            <img src="image/emanon.png" alt="Logo">
+        </div>
+
+        <div class="guide">
+            <a data-i18n="guide.a" href="index.html">
+                主页
+            </a>
+
+            <a data-i18n="guide.b" href="gallery.html">
+                画廊
+            </a>
+
+            <a data-i18n="guide.c" href="story.html">
+                小剧场
+            </a>
+
+            <a data-i18n="guide.d" href="about.html">
+                制作组
+            </a>
+        </div>
+
+        <div class="language">
+            <button class="language-button" id="languageButton">
+                <svg t="1788798110825" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10592" width="50" height="50"><path d="M516.864 85.333333l82.261333 19.114667c-10.069333 42.837333 9.984 82.730667 68.053334 124.330667 135.509333 97.024 167.509333 151.722667 128.981333 272.64-22.698667 71.253333 4.821333 97.28 99.84 97.28V682.666667c-145.92 0-223.018667-72.96-180.394667-206.592 24.874667-77.994667 11.434667-100.906667-97.834666-179.2-83.456-59.733333-119.722667-131.84-100.906667-211.541334z" fill="#2E2F30" p-id="10593"></path><path d="M134.656 440.32a384 384 0 0 0 495.445333 437.162667c-23.594667-54.528-49.322667-66.730667-97.28-65.365334-5.845333 0.128-10.837333 0.426667-21.76 1.066667-82.688 4.992-123.818667-5.333333-162.688-64.426667-43.477333-65.962667-29.866667-113.664 22.613334-174.165333l6.229333-7.168c39.082667-44.8 42.794667-58.794667 14.421333-99.584-31.744-45.653333-49.365333-48.085333-115.669333-29.098667-62.293333 17.792-102.229333 21.717333-141.312 1.578667z m26.368-84.394667c21.418667 16.341333 40.448 15.36 91.477333 0.768 97.408-27.861333 151.637333-20.309333 209.194667 62.421334 55.808 80.213333 41.642667 133.546667-20.181333 204.416l-6.058667 6.954666c-30.293333 34.986667-33.194667 45.013333-15.786667 71.381334 16.981333 25.856 31.317333 29.44 86.229334 26.154666 11.861333-0.725333 17.450667-1.024 24.490666-1.237333 81.664-2.304 137.813333 28.16 177.237334 115.712A384 384 0 1 0 161.066667 355.925333zM512 981.333333C252.8 981.333333 42.666667 771.2 42.666667 512S252.8 42.666667 512 42.666667s469.333333 210.133333 469.333333 469.333333-210.133333 469.333333-469.333333 469.333333z" fill="#2E2F30" p-id="10594"></path></svg>
+            </button>
+
+            <div class="language-menu" id="languageMenu">
+                <button onclick="changeLanguage('zh-CN', '简体中文')" data-lang="zh-CN">
+                    简体中文
+                </button>
+
+                <button onclick="changeLanguage('zh-TW', '繁體中文')" data-lang="zh-TW">
+                    繁體中文
+                </button>
+
+                <button onclick="changeLanguage('en', 'English')" data-lang="en">
+                    English
+                </button>
+
+                <button onclick="changeLanguage('jp', '日本語')" data-lang="jp">
+                    日本語
+                </button>
+            </div>
+        </div>
+
+        <div>
+            
+        </div>
+    </header>
+
+    <section class="hero">
+    </section>
+
+    <botton id="backtop">
+        <svg t="1788514503620" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4824" data-darkreader-inline-fill="" width="50" height="50"><path d="M512 330.666667c14.933333 0 29.866667 4.266667 40.533333 14.933333l277.33333399 234.666667c27.733333 23.466667 29.866667 64 8.53333301 89.6-23.466667 27.733333-64 29.866667-89.6 8.53333299L512 477.866667l-236.8 200.53333299c-27.733333 23.466667-68.266667 19.19999999-89.6-8.53333299-23.466667-27.733333-19.19999999-68.266667 8.53333301-89.6l277.33333399-234.666667c10.666667-10.666667 25.6-14.933333 40.533333-14.933333z" fill="#cdcdcd" p-id="4825" data-darkreader-inline-fill="" style="--darkreader-inline-fill: var(--darkreader-background-2c2c2c, #212425);"></path></svg>
+    </botton>
+</body>
+</html>

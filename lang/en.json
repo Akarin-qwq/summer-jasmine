@@ -1,4 +1,11 @@
 {
+  "guide": {
+    "a": "Home",
+    "b": "Gallery",
+    "c": "Story",
+    "d": "Team"
+  },
+
   "hero": {
     "p": "Scroll down to explore more"
   },
