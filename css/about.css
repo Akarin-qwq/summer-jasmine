@@ -1,10 +1,98 @@
+.about-bg {
+    height: 100vh;
+    background:url("https://imgheybox1.max-c.com/web/bbs/2026/08/31/6123c4bce0aac40863eae3837f3f48cd.jpeg");
+    background-size: cover;
+    background-position: 65% center;
+    position: sticky;
+    top:0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 0;
+}
+
 .about {
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative;
+    min-width: 900px;
+    min-height: 80%;
     margin: 0 auto;
-    padding: 40px;
+    padding: 20px 50px;
     background: rgb(255, 255, 255);
-    color:#242020;
+    color: #242020;
     border-radius: 16px;
     border: 1px solid rgb(0, 0, 0, 0.15);
     box-shadow: 0 8px 30px rgb(0, 0, 0, 0.15);
+}
+
+.about h1 {
+    margin-left: 100px;
+}
+
+@media (max-width:947px) {
+    .about {
+        min-width: 95%;
+    }
+}
+
+@media (max-width:768px) {
+    .about {
+        min-width: 95%;
+        height: 80%;
+        margin: 10px;
+        padding: 10px;
+    }
+}
+
+.say {
+    position: absolute;
+    right: 5vw;
+    height: auto;
+    width: 325px;
+    font-size: 22px;
+    line-height: 1.6;
+}
+
+@media (max-width:768px) {
+    .say {
+        display: none;
+    }
+}
+
+.flower {
+    height: 25px;
+    width: 25px;
+}
+
+.about-main {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 300px;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.about-main main {
+    font-size: 20px;
+    padding-left: 3vw;
+}
+
+.about-main img {
+    position: relative;
+    height: 90px;
+    width: auto;
+    border-radius: 45px;
+}
+
+@media (max-width:768px) {
+    .about-main {
+       margin-left: 10px;
+    }
+
+    .about-main main {
+        font-size: 18px;
+    }
 }
