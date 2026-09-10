@@ -23,12 +23,6 @@ body {
     font-family: "LXGWWenKai", sans-serif;
 }
 
-body svg {
-    user-select: none;
-    -webkit-user-select: none;
-    -webkit-user-drag: none;
-}
-
 /* 导航栏 */
 #navbar {
     position: fixed;
@@ -495,4 +489,10 @@ body svg {
 #backtop.show {
     opacity: 1;
     visibility: visible;
+}
+
+body svg {
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
