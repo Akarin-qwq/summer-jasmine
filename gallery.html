@@ -14,13 +14,16 @@
     <link rel="icon" href="image/icon.ico" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/switch.css">
+    <link rel="stylesheet" href="css/gallery-page.css">
     <script src="script/botton.js" type="module"></script>
+    <script src="script/gallery-page.js" type="module"></script>
     <script src="script/bgm.js" type="module"></script>
     <script src="script/navbar.js" defer></script>
     <script src="script/lang.js" type="module"></script>
+    <script src="script/page-switch.js" type="module"></script>
 </head>
 
-<body>
+<body class="gallery-page">
     <audio id="bgm" autoplay loop>
         <source src="audio/jasmine.mp3" type="audio/mpeg">
     </audio>
@@ -72,13 +75,68 @@
             </div>
         </div>
 
-        <div>
-            
+        <div class="switch">
+            <button class="switch-button" id="switchButton">
+                <svg t="1789137023243" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5491" data-darkreader-inline-fill="" width="200" height="200"><path d="M362 62H182c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V182c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H212c-33 0-60-27-60-60V212c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM362 542H182c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V662c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H212c-33 0-60-27-60-60V692c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM842 62H662c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V182c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H692c-33 0-60-27-60-60V212c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM842 542H662c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V662c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H692c-33 0-60-27-60-60V692c0-33 27-60 60-60h120c33 0 60 27 60 60v120z" fill="" p-id="5492"></path></svg>
+            </button>
+
+            <div class="switch-menu" id="switchMenu">
+                <a href="index.html" data-page="index">主页</a>
+
+                <a href="gallery.html" data-page="gallery">画廊</a>
+
+                <a href="story.html" data-page="story">小剧场</a>
+
+                <a href="about.html" data-page="about">关于我们</a>
+            </div>
         </div>
     </header>
 
     <section class="hero">
     </section>
+
+    <main class="gallery-main">
+        <section class="gallery-panel">
+            <div class="gallery-head">
+                <h2 class="gallery-title" data-i18n="galleryPage.title">
+                    画廊
+                </h2>
+
+                <p class="gallery-hint" data-i18n="galleryPage.hint">
+                    点击图片即可放大欣赏
+                </p>
+            </div>
+
+            <div class="gallery-board" id="galleryBoard"></div>
+
+            <p class="gallery-state" id="galleryLoading" data-i18n="galleryPage.loading">
+                画廊加载中…
+            </p>
+
+            <p class="gallery-state hidden" id="galleryEmpty" data-i18n="galleryPage.empty">
+                画廊正在准备中，敬请期待。
+            </p>
+        </section>
+    </main>
+
+    <!-- 点击查看大图 -->
+    <div class="gallery-viewer" id="galleryViewer" role="dialog" aria-modal="true" hidden>
+        <img class="gallery-viewer-image" id="galleryViewerImage" src="" alt="">
+
+        <button class="viewer-btn" id="viewerClose" type="button" aria-label="关闭">
+            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path d="M195.2 195.2a64 64 0 0 1 90.496 0L512 421.504 738.304 195.2a64 64 0 0 1 90.496 90.496L602.496 512 828.8 738.304a64 64 0 0 1-90.496 90.496L512 602.496 285.696 828.8a64 64 0 0 1-90.496-90.496L421.504 512 195.2 285.696a64 64 0 0 1 0-90.496z" fill="#2E2F30"></path></svg>
+        </button>
+
+        <button class="viewer-btn viewer-btn-side viewer-btn-prev" id="viewerPrev" type="button" aria-label="上一张">
+            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path d="M669.866667 187.733333c-14.933333-14.933333-38.4-14.933333-53.333334 0L298.666667 503.466667c-14.933333 14.933333-14.933333 38.4 0 53.333333l317.866666 315.733333c14.933333 14.933333 38.4 14.933333 53.333334 0 14.933333-14.933333 14.933333-38.4 0-53.333333L379.733333 530.133333l290.133334-288c14.933333-17.066667 14.933333-40.533333 0-54.4z" fill="#2E2F30"></path></svg>
+        </button>
+
+        <button class="viewer-btn viewer-btn-side viewer-btn-next" id="viewerNext" type="button" aria-label="下一张">
+            <svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path d="M354.133333 187.733333c14.933333-14.933333 38.4-14.933333 53.333334 0L725.333333 503.466667c14.933333 14.933333 14.933333 38.4 0 53.333333L407.466667 872.533333c-14.933333 14.933333-38.4 14.933333-53.333334 0-14.933333-14.933333-14.933333-38.4 0-53.333333L644.266667 530.133333l-290.133334-288c-14.933333-17.066667-14.933333-40.533333 0-54.4z" fill="#2E2F30"></path></svg>
+        </button>
+
+        <span class="viewer-counter" id="viewerCounter">1 / 1</span>
+    </div>
 
     <botton id="backtop">
         <svg t="1788514503620" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4824" data-darkreader-inline-fill="" width="50" height="50"><path d="M512 330.666667c14.933333 0 29.866667 4.266667 40.533333 14.933333l277.33333399 234.666667c27.733333 23.466667 29.866667 64 8.53333301 89.6-23.466667 27.733333-64 29.866667-89.6 8.53333299L512 477.866667l-236.8 200.53333299c-27.733333 23.466667-68.266667 19.19999999-89.6-8.53333299-23.466667-27.733333-19.19999999-68.266667 8.53333301-89.6l277.33333399-234.666667c10.666667-10.666667 25.6-14.933333 40.533333-14.933333z" fill="#cdcdcd" p-id="4825" data-darkreader-inline-fill="" style="--darkreader-inline-fill: var(--darkreader-background-2c2c2c, #212425);"></path></svg>
