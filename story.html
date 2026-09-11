@@ -14,17 +14,15 @@
     <link rel="icon" href="image/icon.ico" type="image/png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/switch.css">
+    <!-- md 浏览页专用样式（仅本页引入，见 css/docs.css） -->
+    <link rel="stylesheet" href="css/docs.css">
     <script src="script/botton.js" type="module"></script>
-    <script src="script/bgm.js" type="module"></script>
     <script src="script/navbar.js" defer></script>
     <script src="script/lang.js" type="module"></script>
+    <script src="script/page-switch.js" type="module"></script>
 </head>
 
 <body>
-    <audio id="bgm" autoplay loop>
-        <source src="audio/jasmine.mp3" type="audio/mpeg">
-    </audio>
-
     <header id="navbar">
         <div class="logo">
             <img src="image/emanon.png" alt="Logo">
@@ -72,16 +70,48 @@
             </div>
         </div>
 
-        <div>
-            
+        <div class="switch">
+            <button class="switch-button" id="switchButton">
+                <svg t="1789137023243" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5491" data-darkreader-inline-fill="" width="200" height="200"><path d="M362 62H182c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V182c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H212c-33 0-60-27-60-60V212c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM362 542H182c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V662c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H212c-33 0-60-27-60-60V692c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM842 62H662c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V182c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H692c-33 0-60-27-60-60V212c0-33 27-60 60-60h120c33 0 60 27 60 60v120zM842 542H662c-66 0-120 54-120 120v180c0 66 54 120 120 120h180c66 0 120-54 120-120V662c0-66-54-120-120-120z m30 270c0 33-27 60-60 60H692c-33 0-60-27-60-60V692c0-33 27-60 60-60h120c33 0 60 27 60 60v120z" fill="" p-id="5492"></path></svg>
+            </button>
+
+            <div class="switch-menu" id="switchMenu">
+                <a href="index.html" data-page="index">主页</a>
+
+                <a href="gallery.html" data-page="gallery">画廊</a>
+
+                <a href="story.html" data-page="story">小剧场</a>
+
+                <a href="about.html" data-page="about">关于我们</a>
+            </div>
         </div>
     </header>
 
+    <!-- 背景：沿用 story.html 原本的 .hero（样式见 css/docs.css，改为整页固定底图） -->
     <section class="hero">
     </section>
+
+    <!-- ===== md 浏览页 panel（位于 navbar 下方）=====
+         复用 .content 作为容器，内部是两块彼此分开的白色半透明圆角卡片：
+           .docs-sidebar —— 侧栏（搜索框 + 文件树）
+           .read         —— 正文（Markdown 渲染结果）
+         内容由 script/docs.js 填充，文档清单来自 docs-manifest.json。 -->
+    <main class="content">
+        <aside class="docs-sidebar">
+            <input id="search" type="search" placeholder="搜索文件…" autocomplete="off" aria-label="搜索文件">
+            <nav id="tree" aria-label="文档目录"></nav>
+        </aside>
+
+        <article id="content" class="read"></article>
+    </main>
 
     <botton id="backtop">
         <svg t="1788514503620" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4824" data-darkreader-inline-fill="" width="50" height="50"><path d="M512 330.666667c14.933333 0 29.866667 4.266667 40.533333 14.933333l277.33333399 234.666667c27.733333 23.466667 29.866667 64 8.53333301 89.6-23.466667 27.733333-64 29.866667-89.6 8.53333299L512 477.866667l-236.8 200.53333299c-27.733333 23.466667-68.266667 19.19999999-89.6-8.53333299-23.466667-27.733333-19.19999999-68.266667 8.53333301-89.6l277.33333399-234.666667c10.666667-10.666667 25.6-14.933333 40.533333-14.933333z" fill="#cdcdcd" p-id="4825" data-darkreader-inline-fill="" style="--darkreader-inline-fill: var(--darkreader-background-2c2c2c, #212425);"></path></svg>
     </botton>
+
+    <!-- md 浏览页脚本：marked 渲染 + 内联文档数据 + 浏览逻辑（放末尾，不阻塞首屏） -->
+    <script src="vendor/marked.min.js"></script>
+    <script src="docs-data.js"></script>
+    <script src="script/docs.js"></script>
 </body>
 </html>
