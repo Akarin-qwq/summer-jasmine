@@ -111,7 +111,7 @@ body {
     transform: scale(1.1);
 }
 
-@media (max-width:768px) {
+@media (max-width:888px) {
     .guide {
         display: none;
     }
@@ -237,7 +237,7 @@ body {
     text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
     .hero-content {
         width: 500px;
         text-align: center;

@@ -1,0 +1,107 @@
+.switch {
+    position: fixed;
+    top: 10px;
+    left: 15px;
+    z-index: 1000;
+}
+
+/* 顶部按钮 */
+.switch-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 70px;
+    height: 70px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #ddd;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    cursor: pointer;
+}
+
+/* 下拉菜单 */
+.switch-menu {
+    position: absolute;
+
+    top: calc(100% + 8px);
+    left: 0;
+
+    min-width: 140px;
+    padding: 6px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-5px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s;
+}
+
+/* 打开状态 */
+.switch-menu.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 菜单里的语言 */
+.switch-menu a {
+    width: 100%;
+    padding: 9px 12px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: none;
+    border-radius: 9px;
+
+    background: transparent;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+/* 鼠标悬停 */
+.switch-menu a:hover {
+    background: #f2f2f2;
+}
+
+/* 当前语言 */
+.switch-menu a.active {
+    background: #e6effc;
+    color: #2c66c5;
+    font-weight: 600;
+}
+
+
+/* =========================
+   只在手机端显示
+   ========================= */
+@media (min-width: 769px) {
+    .switch {
+        display: none;
+    }
+}
+
+/* 设定字体颜色 */
+.switch-menu a,
+.switch-menu a:visited,
+.switch-menu a:hover,
+.switch-menu a:active {
+    color: #242020;
+    text-decoration: none;
+}
