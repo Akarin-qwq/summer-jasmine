@@ -1,6 +1,5 @@
 .switch {
     position: fixed;
-    top: 10px;
     left: 15px;
     z-index: 1000;
 }

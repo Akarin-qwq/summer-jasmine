@@ -314,6 +314,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 40px;
+    overflow-wrap: anywhere;
     background: rgb(255, 255, 255);
     color:#242020;
     border-radius: 16px;
