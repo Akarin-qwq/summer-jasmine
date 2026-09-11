@@ -355,6 +355,13 @@ body {
     }
 }
 
+.pv{
+    display: block;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+}
+
 /* 人物展示 */
 .image-row {
     display:flex;
