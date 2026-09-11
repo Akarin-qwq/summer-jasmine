@@ -3,7 +3,7 @@
     "a": "Home",
     "b": "Gallery",
     "c": "Story",
-    "d": "Team"
+    "d": "About"
   },
 
   "hero": {
@@ -56,5 +56,15 @@
         "4": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/7570c707312dbf78d88b11b6bf4c37dfa10b2ac1/ss_7570c707312dbf78d88b11b6bf4c37dfa10b2ac1.1920x1080.jpg?t=1788184471",
         "5": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/64cc03a3cac8dbec678e360c416813e06794e3d6/ss_64cc03a3cac8dbec678e360c416813e06794e3d6.1920x1080.jpg?t=1788184471",
         "6": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/80e51da39159056854596a358bab55eed72ce8c8/ss_80e51da39159056854596a358bab55eed72ce8c8.1920x1080.jpg?t=1788184471" 
-    }
+    },
+
+  "staff": "STAFF",
+
+  "anna": "<strong>アンナ</strong><br>主催，シナリオ，運営。",
+  "xiaoran": "<strong>XiAoRaN∅</strong><br>プログラマー",
+  "abe": "<strong>ABe</strong><br>イラストレーター",
+  "youzai": "<strong>牖災</strong><br>イラストレーター",
+  "akrin": "<strong>Akrin</strong><br>ウェブ制作協力",
+
+  "say": "<h2>アンナからのメッセージ：</h2><about>私たちのウェブサイトを訪れてくださって、本当にありがとうございます！ 私たちは、とても小さなインディーゲーム制作チームです。<br>プログラム担当のXiAoRaN∅や、イラスト担当のABeさんと牖災さんに手伝ってもらいながら、それでもたくさんの遠回りをしてきました。<br>emanonという名前は、有名なSF小説「さすらいエマノン」に由来しています。一代、また一代と記憶を受け継ぎながら、素敵な記憶を皆さんへ届けていけたらと思っています。</about>"
 }

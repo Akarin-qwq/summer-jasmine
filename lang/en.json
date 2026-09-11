@@ -3,7 +3,7 @@
     "a": "Home",
     "b": "Gallery",
     "c": "Story",
-    "d": "Team"
+    "d": "About"
   },
 
   "hero": {
@@ -56,5 +56,15 @@
         "4": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/7570c707312dbf78d88b11b6bf4c37dfa10b2ac1/ss_7570c707312dbf78d88b11b6bf4c37dfa10b2ac1.1920x1080.jpg?t=1788184471",
         "5": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/64cc03a3cac8dbec678e360c416813e06794e3d6/ss_64cc03a3cac8dbec678e360c416813e06794e3d6.1920x1080.jpg?t=1788184471",
         "6": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/80e51da39159056854596a358bab55eed72ce8c8/ss_80e51da39159056854596a358bab55eed72ce8c8.1920x1080.jpg?t=1788184471" 
-    }
+    },
+
+  "staff": "STAFF",
+
+  "anna": "<strong>Anna</strong><br>Producer, Scenario Writer, Operations.",
+  "xiaoran": "<strong>XiAoRaN∅</strong><br>Programmer",
+  "abe": "<strong>ABe</strong><br>Illustrator",
+  "youzai": "<strong>牖災</strong><br>Illustrator",
+  "akrin": "<strong>Akrin</strong><br>Web Development Support",
+
+  "say": "<h2>Anna:</h2><about>Thank you so much for visiting our website! We are a tiny independent game development team.<br>Although we have XiAoRaN∅ helping with programming, and the artists ABe and 牖災 helping with illustrations, we've still taken quite a few detours along the way.<br>The name \"emanon\" comes from the famous science fiction novel <em>Memories of Emanon</em>. We hope to pass on these beautiful memories to everyone through the continuation of memories from one generation to the next.</about>"
 }

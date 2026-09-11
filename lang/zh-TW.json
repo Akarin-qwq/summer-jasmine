@@ -56,5 +56,15 @@
         "4": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/7570c707312dbf78d88b11b6bf4c37dfa10b2ac1/ss_7570c707312dbf78d88b11b6bf4c37dfa10b2ac1.1920x1080.jpg?t=1788184471",
         "5": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/64cc03a3cac8dbec678e360c416813e06794e3d6/ss_64cc03a3cac8dbec678e360c416813e06794e3d6.1920x1080.jpg?t=1788184471",
         "6": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/80e51da39159056854596a358bab55eed72ce8c8/ss_80e51da39159056854596a358bab55eed72ce8c8.1920x1080.jpg?t=1788184471" 
-    }
+    },
+
+    "staff": "STAFF",
+
+  "anna": "<strong>安娜</strong><br>主催，劇本，運營。",
+  "xiaoran": "<strong>XiAoRaN∅</strong><br>程式",
+  "abe": "<strong>ABe</strong><br>畫師",
+  "youzai": "<strong>牖災</strong><br>畫師",
+  "akrin": "<strong>Akrin</strong><br>網頁製作協力",
+
+  "say": "<h2>安娜的留言：</h2><about>謝謝大家點擊我們的網頁呀，我們是小的不能再小的獨立遊戲製作組。<br>雖然有程式XiAoRaN∅、畫師abe老師和牖災來幫忙，但依然走了很多的彎路。<br>emanon的來源是著名的科幻小說《回憶愛瑪儂》，希望在一代又一代記憶的傳承中將美好的記憶傳遞給大家。</about>"
 }

@@ -56,5 +56,15 @@
         "4": "image/截图4.jpg",
         "5": "image/截图5.jpg",
         "6": "image/截图6.jpg"
-    }
+    },
+
+    "staff": "制作组成员",
+
+    "anna": "<strong>安娜</strong><br>主催，剧本，运营。",
+    "xiaoran": "<strong>XiAoRaN∅</strong><br>程序",
+    "abe": "<strong>ABe</strong><br>画师",
+    "youzai": "<strong>牖災</strong><br>画师",
+    "akrin": "<strong>Akrin</strong><br>网页制作协助",
+
+    "say": "<h2>安娜的留言：</h2><about>谢谢大家点击我们的网页呀，我们是小的不能再小的独立游戏制作组。<br>虽然有程序XiAoRaN∅、画师abe老师和牖災来帮忙，但依然走了很多的弯路。<br>emanon的来源是著名的科幻小说《回忆爱玛侬》，希望在一代又一代记忆的传承中将美好的记忆传递给大家。</about>"
 }
