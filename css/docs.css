@@ -48,7 +48,7 @@
     overflow: auto;
     padding: 14px;
     color: #242020;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgb(0, 0, 0, 0.15);
     border-radius: 16px;
     box-shadow: 0 8px 30px rgb(0, 0, 0, 0.15);
@@ -97,7 +97,7 @@
     max-width: none;
     min-height: 320px;
     margin: 0;
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.9);
 }
 
 /* 搜索框：沿用导航胶囊的白底细边风格 */
