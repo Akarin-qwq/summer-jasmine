@@ -1,0 +1,199 @@
+/* =========================================================================
+   docs.css —— story.html（md 浏览页）专用样式
+
+   风格完全对齐 styles.css：
+   深色底 + 白色半透明圆角卡片 + 细边框 + 柔和阴影，字体沿用 LXGWWenKai。
+   本文件只在 story.html 引入，因此直接复用并微调已有的 .hero / .content / .read，
+   尽量不新增类名；真正新增的只有 .docs-sidebar（侧栏没有现成对应物）。
+   ========================================================================= */
+
+/* 背景：沿用 .hero 的背景图，但改为整页固定底图。
+   story.html 原来的 hero 是空占位，这里让它铺满视口当背景，
+   这样 navbar 下方的 panel 能第一时间看到，而不用先滚过一整屏。 */
+.hero {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 0;
+}
+
+/* panel：navbar 下方的内容容器。
+   复用 .content 承担布局（左右排布“侧栏 + 正文”两块卡片），
+   去掉它原本的整条底色，改由两张卡片自己提供半透明白底。 */
+.content {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    min-height: 100vh;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 110px 5% 80px;      /* 顶部留出 navbar 的高度 */
+    background: transparent;
+}
+
+/* 关掉 .content 顶部的白色渐隐条，避免出现一条悬空的白色色带 */
+.content::before {
+    display: none;
+}
+
+/* 侧栏卡片：白色半透明圆角矩形。
+   参数（边框 / 圆角 / 阴影 / 字号色）与 .read、.content 保持同一套。 */
+.docs-sidebar {
+    flex: 0 0 280px;
+    position: sticky;
+    top: 100px;
+    max-height: calc(100vh - 140px);
+    overflow: auto;
+    padding: 14px;
+    color: #242020;
+    background: rgba(255, 255, 255, 0.65);
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgb(0, 0, 0, 0.15);
+}
+
+/* 侧栏滚动条：把轨道（外框）设为透明，只留一条很细的圆角滑块，
+   平时几乎不显眼，鼠标移上去才稍微加深，方便辨认。 */
+.docs-sidebar {
+    scrollbar-width: thin;                             /* Firefox：细滚动条 */
+    scrollbar-color: rgba(0, 0, 0, 0.18) transparent;  /* Firefox：滑块 / 轨道 */
+}
+
+.docs-sidebar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+/* 轨道与角落：透明 = 隐藏外框 */
+.docs-sidebar::-webkit-scrollbar-track,
+.docs-sidebar::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* 滑块：配合透明边框 + background-clip，看起来比 8px 更细 */
+.docs-sidebar::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.14);
+    background-clip: content-box;
+    border: 2px solid transparent;
+    border-radius: 999px;
+}
+
+.docs-sidebar:hover::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.28);
+    background-clip: content-box;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+    background-clip: content-box;
+}
+
+/* 正文卡片：复用 .read 的圆角 / 边框 / 阴影 / 文字色，
+   仅改成半透明并占满剩余宽度，与侧栏彻底分开。 */
+.content .read {
+    flex: 1 1 auto;
+    max-width: none;
+    min-height: 320px;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.65);
+}
+
+/* 搜索框：沿用导航胶囊的白底细边风格 */
+#search {
+    width: 100%;
+    padding: 8px 14px;
+    margin-bottom: 10px;
+    font: inherit;
+    color: #242020;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    outline: none;
+}
+
+#search:focus {
+    border-color: #2c66c5;
+}
+
+/* 文件树 */
+#tree {
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+#tree ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 14px;
+}
+
+#tree > ul {
+    padding-left: 0;
+}
+
+#tree .file-link,
+#tree .folder {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    padding: 5px 9px;
+    font: inherit;
+    color: #242020;
+    text-align: left;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border-radius: 9px;          /* 与 .language-menu button 一致 */
+    cursor: pointer;
+}
+
+/* 悬停 / 选中配色也沿用语言菜单的做法 */
+#tree .file-link:hover,
+#tree .folder:hover {
+    background: #f2f2f2;
+}
+
+#tree .file-link.active {
+    background: #e6effc;
+    color: #2c66c5;
+    font-weight: 600;
+}
+
+/* 目录折叠箭头 */
+#tree .chev {
+    width: 12px;
+    color: #656d76;
+    font-size: 11px;
+    transition: transform .12s ease;
+}
+
+#tree li.dir.open > .folder .chev {
+    transform: rotate(90deg);
+}
+
+/* 加载/读取失败提示 */
+#content .error {
+    color: #cf222e;
+}
+
+/* 窄屏：改为上下排列，侧栏不再吸顶 */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+        padding: 100px 14px 60px;
+    }
+
+    .docs-sidebar {
+        position: static;
+        flex: none;
+        width: 100%;
+        max-height: none;
+    }
+
+    .content .read {
+        width: 100%;
+    }
+}
