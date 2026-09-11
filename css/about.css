@@ -18,9 +18,10 @@
     position: relative;
     min-width: 900px;
     min-height: 80%;
+    top: 20px;
     margin: 0 auto;
     padding: 20px 50px;
-    background: rgb(255, 255, 255);
+    background: rgb(255, 255, 255, 0.9);
     color: #242020;
     border-radius: 16px;
     border: 1px solid rgb(0, 0, 0, 0.15);
