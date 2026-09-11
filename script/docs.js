@@ -78,6 +78,28 @@
     return naturalCompare(a, b);
   }
 
+  // 选择默认打开的文档，优先级：
+  //   1) 显式指定（opts.defaultDoc，可用完整路径或文件名）
+  //   2) 约定文件名（默认 index.md / README.md，可用 opts.defaultFiles 覆盖）
+  //   3) 清单里的第一个文件
+  function pickDefault(files, opts) {
+    opts = opts || {};
+    const list = files || [];
+    if (opts.defaultDoc) {
+      const want = String(opts.defaultDoc).replace(/^\.\/+/, '');
+      const exact = list.filter(function (f) { return f === want; });
+      if (exact.length) return exact[0];
+      const byName = list.filter(function (f) { return f.split('/').pop() === want; });
+      if (byName.length) return byName[0];
+    }
+    const preferred = (opts.defaultFiles || DEFAULT_FILES).map(function (d) { return d.toLowerCase(); });
+    for (const f of list) {
+      const name = f.split('/').pop().toLowerCase();
+      if (preferred.indexOf(name) !== -1) return f;
+    }
+    return list[0] || null;
+  }
+
   // 由相对路径数组构建目录树
   function buildTree(paths) {
     const rootNode = { name: '', type: 'dir', path: '', children: {} };
@@ -169,7 +191,8 @@
       treeEl: '#tree',
       searchEl: '#search',
       emptyEl: '#empty',
-      defaultFiles: DEFAULT_FILES
+      defaultFiles: DEFAULT_FILES,
+      defaultDoc: ''      // 可在 <script> 上用 data-default-doc 指定默认打开的文档
     }, opts || {});
 
     // 记住页面原始标题，切换文档时只追加文档名，保持站点标题一致
@@ -189,14 +212,9 @@
       });
     }
 
-    // 由文件名计算默认入口
+    // 计算默认入口（规则见 pickDefault）
     function defaultEntry() {
-      const preferred = cfg.defaultFiles.map(function (d) { return d.toLowerCase(); });
-      for (const f of files) {
-        const name = f.split('/').pop().toLowerCase();
-        if (preferred.indexOf(name) !== -1) return f;
-      }
-      return files[0] || null;
+      return pickDefault(files, cfg);
     }
 
     function currentPath() {
@@ -382,11 +400,14 @@
   // 自动启动（浏览器）
   if (typeof document !== 'undefined') {
     const cfg = document.currentScript ? document.currentScript.dataset : {};
-    const startOptions = cfg.manifestPath ? { manifestPath: cfg.manifestPath } : undefined;
+    const startOptions = {};
+    if (cfg.manifestPath) startOptions.manifestPath = cfg.manifestPath;
+    if (cfg.defaultDoc) startOptions.defaultDoc = cfg.defaultDoc;   // data-default-doc
+    const opts = Object.keys(startOptions).length ? startOptions : undefined;
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () { init(startOptions); });
+      document.addEventListener('DOMContentLoaded', function () { init(opts); });
     } else {
-      init(startOptions);
+      init(opts);
     }
   }
 
@@ -397,6 +418,7 @@
     fixRelativeUrls: fixRelativeUrls,
     naturalCompare: naturalCompare,
     extractDateKey: extractDateKey,
-    compareNames: compareNames
+    compareNames: compareNames,
+    pickDefault: pickDefault
   };
 }));
