@@ -1,7 +1,7 @@
 # Summer-Jasmine
 本仓库是 Steam 游戏[小城茉莉](https://store.steampowered.com/app/4457660/)的官方网页。  
 
-链接：[summer-jasmine.com](www.summer-jasmine.com)
+链接：[summer-jasmine.com](https://www.summer-jasmine.com)
 
 ## 素材归属
 
