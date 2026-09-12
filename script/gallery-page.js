@@ -288,18 +288,31 @@ function columnCount() {
     return Math.max(2, Math.min(MAX_COLUMNS, count));
 }
 
-function buildColumns(count, gap) {
-    board.textContent = "";
-    columns = [];
+/* 立即跳到指定位置（绕过 html 上的 scroll-behavior: smooth，避免带动画） */
+function jumpTo(x, y) {
+    const html = document.documentElement;
+    const previous = html.style.scrollBehavior;
 
-    for (let index = 0; index < count; index++) {
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(x, y);
+    html.style.scrollBehavior = previous;
+}
+
+/* 只增减列，不清空面板，避免内容一瞬间全部消失 */
+function ensureColumns(count, gap) {
+    while (columns.length > count) {
+        columns.pop().remove();
+    }
+
+    while (columns.length < count) {
         const column = document.createElement("div");
         column.className = "gallery-col";
-        column.style.setProperty("--gallery-gap", `${gap}px`);
 
         board.appendChild(column);
         columns.push(column);
     }
+
+    columns.forEach(column => column.style.setProperty("--gallery-gap", `${gap}px`));
 }
 
 function distribute(gap) {
@@ -317,7 +330,13 @@ function distribute(gap) {
             }
         }
 
-        columns[shortest].appendChild(card);
+        const column = columns[shortest];
+
+        /* 已经在最矮那一列就不搬动它：搬动节点会让浏览器调整滚动位置 */
+        if (card.parentElement !== column) {
+            column.appendChild(card);
+        }
+
         heights[shortest] += card.offsetHeight + gap;
     });
 }
@@ -329,14 +348,19 @@ function relayout() {
 
     const gap = gapSize();
     const count = columnCount();
+    const scrollY = window.scrollY;   /* 排布时会被浏览器顺手改掉，先记下来 */
 
     board.style.setProperty("--gallery-gap", `${gap}px`);
 
     if (count !== columns.length) {
-        buildColumns(count, gap);
+        ensureColumns(count, gap);
     }
 
     distribute(gap);
+
+    if (window.scrollY !== scrollY) {
+        jumpTo(window.scrollX, scrollY);
+    }
 }
 
 /* =========================

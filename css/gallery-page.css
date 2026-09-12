@@ -69,6 +69,9 @@ body.gallery-page .hero {
     align-items: flex-start;
     gap: var(--gallery-gap);
     width: 100%;
+
+    /* 排布时卡片会换列，关掉滚动锚定，免得浏览器把页面滚回别处 */
+    overflow-anchor: none;
 }
 
 .gallery-col {
@@ -77,6 +80,7 @@ body.gallery-page .hero {
     flex-direction: column;
     gap: var(--gallery-gap);
     min-width: 0;
+    overflow-anchor: none;
 }
 
 .gallery-card {
