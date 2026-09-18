@@ -56,9 +56,11 @@
         "4": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/7570c707312dbf78d88b11b6bf4c37dfa10b2ac1/ss_7570c707312dbf78d88b11b6bf4c37dfa10b2ac1.1920x1080.jpg?t=1788184471",
         "5": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/64cc03a3cac8dbec678e360c416813e06794e3d6/ss_64cc03a3cac8dbec678e360c416813e06794e3d6.1920x1080.jpg?t=1788184471",
         "6": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4457660/80e51da39159056854596a358bab55eed72ce8c8/ss_80e51da39159056854596a358bab55eed72ce8c8.1920x1080.jpg?t=1788184471" 
-    },
+  },
 
-    "staff": "STAFF",
+  "footer-description": ["小城、夏日、茉莉。","一個關於願望與遺忘的故事。"],
+
+  "staff": "STAFF",
 
   "anna": "<strong>安娜</strong><br>主催，劇本，運營。",
   "xiaoran": "<strong>XiAoRaN∅</strong><br>程式",

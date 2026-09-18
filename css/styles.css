@@ -225,13 +225,13 @@ body {
     margin-left: 5%;
 }
 
-.hero img {
+.hero-content img {
     width: 80%;
     height: auto;
     filter: drop-shadow(0 0 3px rgb(30, 86, 59));
 }
 
-.hero p {
+.hero-content p {
     margin-top: 30px;
     opacity: 0.8;
     text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
@@ -245,14 +245,14 @@ body {
         position: relative;
     }
 
-    .hero img {
+    .hero-content img {
         position: relative;
         bottom: 26vh;
         width: 75%;
         height: auto;
     }
 
-    .hero p {
+    .hero-content p {
         position: relative;
         bottom: 26vh;
         text-shadow: 0 0 10px rgb(0, 0, 0, 0.5);
@@ -263,7 +263,7 @@ body {
 .content {
     position: relative;
     min-height: 150vh;
-    padding: 100px 10%;
+    padding: 10px 100px;
     background: rgb(255, 255, 255, 0.5);
     z-index: 1;
 }
@@ -287,25 +287,9 @@ body {
     pointer-events: none;
 }
 
-.content h2 {
-    font-size:42px;
-    margin-bottom: 40px;
-}
-
-.content p {
-    max-width: 1000px;
-    font-size: 18px;
-    line-height: 2;
-    margin-bottom: 30px;
-}
-
 @media (max-width: 768px) {
     .content {
         padding: 10px;
-    }
-
-    .content p {
-        font-size: 16px;
     }
 }
 
@@ -341,24 +325,29 @@ body {
     height: auto;
 }
 
-@media (max-widt:"768px") {
+.read h2 {
+    font-size:42px;
+    margin-bottom: 40px;
+}
+
+.read p {
+    max-width: 1000px;
+    font-size: 18px;
+    line-height: 2;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 768px) {
     .read {
-        padding: 10px;
-    }
-
-    .read h1 {
-        font-size: 28px;
-    }
-
-    .read h3 {
-        font-size: 21px;
+        padding: 25px;
     }
 }
 
-.pv{
+.pv {
     display: block;
     max-width: 1000px;
     aspect-ratio: 16 / 9;
+    border-radius: 10px;
 }
 
 /* 人物展示 */
@@ -424,6 +413,7 @@ body {
 .find-us {
     padding: 80px 10px;
     text-align: center;
+    display: none;
 }
 
 .find-us h4 {
@@ -433,27 +423,21 @@ body {
 
 .social-links {
     display: flex;
-    justify-content: space-evenly;
-    gap: 25px;
+    flex-direction: column;
 }
 
 .social-item {
-    width:100px;
-    height:100px;
     display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     gap:10px;
-    text-decoration:none;
+    margin: 5px;
     border-radius: 16px;
     transition:
     transform 0.3s ease;
 }
 
 .social-item svg {
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
 }
 
 .social-item:hover {
@@ -462,13 +446,88 @@ body {
 
 @media (max-width:768px) {
     .social-links {
-        justify-content: space-between;
-        margin: 10px;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-    
-    .social-item {
-        width: 25px;
-        height: 25px;
+}
+
+.footer-bg {
+    width: 100%;
+    position: relative;
+    padding: 10px 100px;
+    background: rgb(255, 255, 255, 0.5);
+    z-index: 1;
+}
+.footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    gap: 10px;
+    overflow-wrap: anywhere;
+    background: rgb(255, 255, 255);
+    color:#242020;
+    border-radius: 16px;
+    border: 1px solid rgb(0, 0, 0, 0.15);
+    box-shadow: 0 8px 30px rgb(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.footer a { 
+    color: gray;
+    text-decoration: none;
+}
+
+.footer-l {
+    position: relative;
+    margin: 15px;
+    min-width: 250px;
+}
+
+.footer-r {
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.footer-logo {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.footer-logo img{
+    display: flex;
+    position: relative;
+    max-width: 180px;
+    min-width: none;
+    padding: 15px;
+}
+
+@media (max-width:768px) {
+    .footer-bg {
+        padding: 0;
+    }
+
+    .footer {
+        padding: 10px;
+        margin: 0 10px;
+    }
+
+    .footer-logo {
+        margin: 5px;
+        flex-direction: row;
+    }
+
+    .footer-logo img{
+        max-width: 150px;
+        padding: 5px;
+        margin: 5px 0;
     }
 }
 
